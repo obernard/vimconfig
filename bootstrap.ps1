@@ -1,5 +1,6 @@
 $VimRcFilePath = Join-Path $HOME ".vimrc"
 $VimFilesPath = Join-Path $HOME "vimfiles"
+$PathogenURL = "https://tpo.pe/pathogen.vim"
 $PathogenFilePath = Join-Path $VimFilesPath (Join-Path "autoload" "pathogen.vim")
 
 # Initialises vimrc file.
@@ -18,7 +19,12 @@ if (-not (Test-Path $VimRcFilePath -PathType Leaf)) {
 
 # Initialises Pathogen.
 if (-not (Test-Path $PathogenFilePath -PathType Leaf)) {
-    curl -LSso $PathogenFilePath https://tpo.pe/pathogen.vim
+    if ((Get-Host).Version.Major -eq 4) {
+        Invoke-WebRequest -Uri $PathogenURL -OutFile $PathogenFilePath
+    } else {
+        # Let's hope Cygwin is installed! ^^
+        curl -LSso $PathogenFilePath $PathogenURL
+    }
 }
 
 # Gets plugins.
@@ -27,7 +33,8 @@ Get-Content plugins.txt | foreach {
     $PluginRemoteAddress = $_
     # TODO: Poor man's URL2name converter. Change that!
     $PluginName = $PluginRemoteAddress.split('/')[-1].split('.')[0]
-    if (-not (Test-Path (Join-Path $BundleFolder $PluginName) -PathType Container)) {
-        git clone $PluginRemoteAddress $BundleFolder
+    $DestinationFolder = Join-Path $BundleFolder $PluginName
+    if (-not (Test-Path $DestinationFolder -PathType Container)) {
+        git clone $PluginRemoteAddress $DestinationFolder
     }
 }
