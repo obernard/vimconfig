@@ -6,6 +6,10 @@
 "              on this file is still a good idea.
 
 "------------------------------------------------------------
+
+execute pathogen#infect()
+
+"------------------------------------------------------------
 " Features {{{1
 "
 " Set 'nocompatible' to ward off unexpected things that your distro might
@@ -178,4 +182,3 @@ function! HasPaste()
     en
     return ''
 endfunction
-
