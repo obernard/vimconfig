@@ -153,11 +153,17 @@ map Y y$
 
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
-nnoremap <C-L> :nohl<CR><C-L>
+nnoremap <silent> _ :nohl<CR>
 
 " Map left and right arrows to browse through buffers in normal mode.
 nnoremap <Left> :bp<CR>
 nnoremap <Right> :bn<CR>
+
+" Mappings for browsing through splitted windows easily
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 
 " Set leader to ','
 let mapleader = ","
