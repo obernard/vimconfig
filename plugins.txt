@@ -1,1 +1,4 @@
 https://github.com/PProvost/vim-ps1.git
+https://github.com/elzr/vim-json.git
+https://github.com/pangloss/vim-javascript.git
+
