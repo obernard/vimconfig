@@ -172,9 +172,10 @@ let mapleader = ","
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>d :bd<CR>
 nnoremap <Leader>x :x<CR>
+nnoremap <Leader>q :q<CR>
 
 " Mappings for configuration files.
-nnoremap <Leader>e :e $MYVIMRC<CR>
+nnoremap <Leader>e :e $HOME/vimconfig/.vimrc<CR>
 
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
