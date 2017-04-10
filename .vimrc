@@ -190,5 +190,6 @@ function! HasPaste()
     return ''
 endfunction
 
-hi CursorLine gui=underline cterm=underline
 set cursorline
+hi clear CursorLine
+hi CursorLine gui=underline cterm=underline
