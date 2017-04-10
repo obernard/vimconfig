@@ -189,3 +189,6 @@ function! HasPaste()
     en
     return ''
 endfunction
+
+hi CursorLine gui=underline cterm=underline
+set cursorline
