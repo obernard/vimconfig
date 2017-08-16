@@ -159,6 +159,9 @@ nnoremap <silent> _ :nohl<CR>
 nnoremap <Left> :bp<CR>
 nnoremap <Right> :bn<CR>
 
+" Map space to page down in normal mode.
+nnoremap <Space> 
+
 " Mappings for browsing through splitted windows easily
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
