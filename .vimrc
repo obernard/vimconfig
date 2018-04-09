@@ -202,6 +202,6 @@ hi CursorLine gui=underline cterm=underline
 
 if has("autocmd")
     augroup templates
-        autocmd BufNewFile *.py 0r ~/.vim/templates/skeleton.py
+        autocmd BufNewFile *.py 0r ~/vimconfig/templates/skeleton.py
     augroup END
 endif
