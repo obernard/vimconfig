@@ -183,6 +183,9 @@ nnoremap <Leader>e :e $HOME/vimconfig/.vimrc<CR>
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
+" Mapping for finding Error x in text (with no trailing '(ignored)')
+map <leader>E /Error \d\(\s*(ignored)\)\@!<cr>
+
 "------------------------------------------------------------
 
 " Returns true if paste mode is enabled
@@ -196,3 +199,9 @@ endfunction
 set cursorline
 hi clear CursorLine
 hi CursorLine gui=underline cterm=underline
+
+if has("autocmd")
+    augroup templates
+        autocmd BufNewFile *.py 0r ~/.vim/templates/skeleton.py
+    augroup END
+endif
