@@ -184,7 +184,7 @@ nnoremap <Leader>e :e $HOME/vimconfig/.vimrc<CR>
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
 " Mapping for finding Error x in text (with no trailing '(ignored)')
-map <leader>E /Error \d\(\s*(ignored)\)\@!<cr>
+map <leader>E /Error \d\(\s*(ignor.*?e)\)\@!<cr>
 
 "------------------------------------------------------------
 
