@@ -223,3 +223,5 @@ set nofoldenable
 set foldlevel=2
 
 autocmd BufNewFile,BufRead *.gv set filetype=dot
+
+nnoremap <Leader>m :make<cr><bar>:copen<cr>
