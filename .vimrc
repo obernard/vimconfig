@@ -216,3 +216,8 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 autocmd BufWritePre *.py,c,h,json,js,html,css,sh,*.gv,*.odl %s/\s\+$//e
+
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
