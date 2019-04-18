@@ -205,3 +205,14 @@ if has("autocmd")
         autocmd BufNewFile *.py 0r ~/vimconfig/templates/skeleton.py
     augroup END
 endif
+
+"------------------------------------------------------------
+" Highlighting trailing spaces
+
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+autocmd BufWritePre *.py,c,h,json,js,html,css,sh,*.gv,*.odl %s/\s\+$//e
