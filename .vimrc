@@ -221,3 +221,5 @@ set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
 set foldlevel=2
+
+autocmd BufNewFile,BufRead *.gv set filetype=dot
