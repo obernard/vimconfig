@@ -226,3 +226,6 @@ autocmd BufNewFile,BufRead *.gv set filetype=dot
 
 nnoremap <Leader>m :make<cr><bar>:copen<cr>
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+
+" Removing warning about SnipMate deprecated
+let g:snipMate = { 'snippet_version' : 1 }
